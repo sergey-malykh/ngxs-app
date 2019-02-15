@@ -10,5 +10,9 @@
   ],
   "include": [
     "**/*.ts"
-  ]
+  
+    , "../../libs/products/src/index.ts"
+
+    , "../../libs/feature-products/src/index.ts"
+]
 }

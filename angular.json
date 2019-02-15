@@ -133,6 +133,90 @@
           }
         }
       }
+    },
+    "data-access-products": {
+      "root": "libs/data-access-products",
+      "sourceRoot": "libs/data-access-products/src",
+      "projectType": "library",
+      "prefix": "ngxs-app",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/data-access-products/src/test.ts",
+            "tsConfig": "libs/data-access-products/tsconfig.spec.json",
+            "karmaConfig": "libs/data-access-products/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/data-access-products/tsconfig.lib.json",
+              "libs/data-access-products/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "feature-products": {
+      "root": "libs/feature-products",
+      "sourceRoot": "libs/feature-products/src",
+      "projectType": "library",
+      "prefix": "ngxs-app",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/feature-products/src/test.ts",
+            "tsConfig": "libs/feature-products/tsconfig.spec.json",
+            "karmaConfig": "libs/feature-products/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/feature-products/tsconfig.lib.json",
+              "libs/feature-products/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ui-products": {
+      "root": "libs/ui-products",
+      "sourceRoot": "libs/ui-products/src",
+      "projectType": "library",
+      "prefix": "ngxs-app",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/ui-products/src/test.ts",
+            "tsConfig": "libs/ui-products/tsconfig.spec.json",
+            "karmaConfig": "libs/ui-products/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-products/tsconfig.lib.json",
+              "libs/ui-products/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

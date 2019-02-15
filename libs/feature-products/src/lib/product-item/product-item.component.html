@@ -1,0 +1,14 @@
+<div
+  class="product-item">
+  <ngxs-app-pizza-form
+    [pizza]="pizza"
+    [toppings]="toppings"
+    (selected)="onSelect($event)"
+    (create)="onCreate($event)"
+    (update)="onUpdate($event)"
+    (remove)="onRemove($event)">
+    <ngxs-app-pizza-display
+      [pizza]="visualise">
+    </ngxs-app-pizza-display>
+  </ngxs-app-pizza-form>
+</div>

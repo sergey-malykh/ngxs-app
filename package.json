@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:proxy": "ng serve -- proxy-config tools/json-server/proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "./node_modules/.bin/nx lint && ng lint",
@@ -23,7 +24,8 @@
     "update:check": "ng update",
     "workspace-schematic": "./node_modules/.bin/nx workspace-schematic",
     "dep-graph": "./node_modules/.bin/nx dep-graph",
-    "help": "./node_modules/.bin/nx help"
+    "help": "./node_modules/.bin/nx help",
+    "json-server": "json-server --watch tools/json-server/db.json"
   },
   "private": true,
   "dependencies": {
@@ -45,30 +47,31 @@
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~0.10.0",
     "@angular/cli": "7.0.1",
     "@angular/compiler-cli": "^7.0.0",
     "@angular/language-service": "^7.0.0",
-    "@angular-devkit/build-angular": "~0.10.0",
     "@ngrx/store-devtools": "6.1.0",
     "@ngxs/schematics": "^0.0.1-alpha.5",
-    "ngrx-store-freeze": "0.2.4",
     "@nrwl/schematics": "7.0.2",
-    "jasmine-marbles": "0.4.0",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
     "jasmine-core": "~2.99.1",
+    "jasmine-marbles": "0.4.0",
     "jasmine-spec-reporter": "~4.2.1",
+    "json-server": "^0.14.2",
     "karma": "~3.0.0",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "ngrx-store-freeze": "0.2.4",
+    "prettier": "1.13.7",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
-    "typescript": "~3.1.3",
-    "prettier": "1.13.7"
+    "typescript": "~3.1.3"
   }
 }

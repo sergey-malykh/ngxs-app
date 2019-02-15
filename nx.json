@@ -13,6 +13,21 @@
     },
     "sandbox-e2e": {
       "tags": []
+    },
+    "data-access-products": {
+      "tags": [
+        "type:data-access"
+      ]
+    },
+    "feature-products": {
+      "tags": [
+        "type:feature"
+      ]
+    },
+    "ui-products": {
+      "tags": [
+        "type:ui"
+      ]
     }
   }
 }

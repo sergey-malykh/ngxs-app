@@ -1,16 +1,16 @@
-
-<div style="text-align:center">
-  <h1>Welcome to {{title}}!</h1>
-  <img width="300" src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png">
+<div class="app">
+  <div class="app__header">
+    <img src="/assets/img/logo.svg" class="app__logo">
+  </div>
+  <div class="app__content">
+    <div class="app__nav">
+      <a routerLink="products" routerLinkActive="active">Products</a>
+    </div>
+    <div class="app__container">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="app__footer">
+      <p>&copy; Ultimate Pizza Inc.</p>
+    </div>
+  </div>
 </div>
-
-<h2>This is an Angular CLI app built with Nrwl Nx!</h2>
-
-An open source toolkit for enterprise Angular applications.
-
-Nx is designed to help you create and build enterprise grade Angular applications. It provides an opinionated approach to application project structure and patterns.
-
-<h2>Quick Start & Documentation</h2>
-
-<a href="https://nrwl.io/nx">Watch a 5-minute video on how to get started with Nx.</a>
-<router-outlet></router-outlet>

@@ -1,0 +1,11 @@
+<div class="pizza-item">
+  <a [routerLink]="['/products', pizza.id]">
+    <ngxs-app-pizza-display
+      [pizza]="pizza">
+    </ngxs-app-pizza-display>
+    <h4>{{ pizza.name }}</h4>
+    <button type="button" class="btn btn__ok">
+      View Pizza
+    </button>
+  </a>
+</div>

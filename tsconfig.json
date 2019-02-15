@@ -16,6 +16,15 @@
     ],
     "baseUrl": ".",
     "paths": {
+      "@ngxs-app/data-access-products": [
+        "libs/data-access-products/src/index.ts"
+      ],
+      "@ngxs-app/feature-products": [
+        "libs/feature-products/src/index.ts"
+      ],
+      "@ngxs-app/ui-products": [
+        "libs/ui-products/src/index.ts"
+      ]
     }
   },
   "exclude": [
