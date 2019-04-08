@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxsStoreModule } from "../store/store.module";
+import { RouteHandler } from "../store/router-handler.service";
 
 export const ROUTES: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'products' },
@@ -14,15 +16,29 @@ export const ROUTES: Routes = [
   }
 ];
 
+function noop() {
+  return function () {
+  };
+}
+
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [ AppComponent ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    RouterModule.forRoot(ROUTES, { initialNavigation: 'enabled' })
+    RouterModule.forRoot(ROUTES, { initialNavigation: 'enabled' }),
+    NgxsStoreModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: noop,
+      deps: [RouteHandler],
+      multi: true
+    }
+  ],
+  bootstrap: [ AppComponent ]
 })
-export class AppModule {}
+export class AppModule {
+}

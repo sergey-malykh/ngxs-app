@@ -14,13 +14,13 @@ import { UiProductsModule } from '@ngxs-app/ui-products';
     RouterModule.forChild([
       { path: '', pathMatch: 'full', component: ProductsComponent },
       {
-        path: ':id',
+        path: 'new',
         component: ProductItemComponent
       },
       {
-        path: 'new',
+        path: ':pizzaId',
         component: ProductItemComponent
-      }
+      },
     ])
   ],
   declarations: [ProductsComponent, ProductItemComponent]

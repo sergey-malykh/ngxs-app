@@ -1,14 +1,14 @@
 <div
   class="product-item">
   <ngxs-app-pizza-form
-    [pizza]="pizza"
-    [toppings]="toppings"
+    [pizza]="pizza$ | async"
+    [toppings]="toppings$ | async"
     (selected)="onSelect($event)"
     (create)="onCreate($event)"
     (update)="onUpdate($event)"
     (remove)="onRemove($event)">
     <ngxs-app-pizza-display
-      [pizza]="visualise">
+      [pizza]="visualise$ | async">
     </ngxs-app-pizza-display>
   </ngxs-app-pizza-form>
 </div>

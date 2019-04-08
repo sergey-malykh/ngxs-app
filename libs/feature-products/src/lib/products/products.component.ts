@@ -1,5 +1,8 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Pizza, PizzasService } from '@ngxs-app/data-access-products';
+import { Component, OnInit } from '@angular/core';
+import { LoadPizzas, Pizza } from '@ngxs-app/data-access-products';
+import { Actions, Select, Store } from "@ngxs/store";
+import { Observable } from "rxjs";
+import { ProductsSelectors } from "@ngxs-app/data-access-products";
 
 @Component({
   selector: 'ngxs-app-products',
@@ -8,13 +11,12 @@ import { Pizza, PizzasService } from '@ngxs-app/data-access-products';
   // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductsComponent implements OnInit {
-  pizzas: Pizza[];
 
-  constructor(private pizzaService: PizzasService) {}
+  @Select(ProductsSelectors.pizzas) pizzas$: Observable<Pizza[]>;
+
+  constructor(private store: Store, private actions$: Actions) {}
 
   ngOnInit() {
-    this.pizzaService.getPizzas().subscribe(pizzas => {
-      this.pizzas = pizzas;
-    });
+    this.store.dispatch(new LoadPizzas());
   }
 }
